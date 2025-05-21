@@ -31,6 +31,19 @@
             text-align: center;
             border-radius: 5px;
         }
+        .commonBtn{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #cdcfd1;
+            padding: 10px 15px;
+            border-radius: 5px;
+
+        }
+        .commonBtn a{
+            text-decoration: none;
+            color:black;
+        }
     </style>
 </head>
 
@@ -44,16 +57,23 @@
             <p id="changeText">Thsi is origian text......!!</p>
         </div>
         <div class="cart_title">
-            <button style="padding: 10px 15px; border: none ; background-color: aquamarine; border-radius: 5px; margin-bottom: 20px;" id="toggleBtn">I am toggle button</button>
+            <button
+                style="padding: 10px 15px; border: none ; background-color: aquamarine; border-radius: 5px; margin-bottom: 20px;"
+                id="toggleBtn">I am toggle button</button>
             <p id="toggleText">This is original text</p>
         </div>
         <div class="cart_title">
-            <button style="padding: 10px 15px; border: none ; background-color: aquamarine; border-radius: 5px; margin-bottom: 20px;" id="randomBtn">I am Random button</button>
+            <button
+                style="padding: 10px 15px; border: none ; background-color: aquamarine; border-radius: 5px; margin-bottom: 20px;"
+                id="randomBtn">I am Random button</button>
             <p id="randomText"></p>
         </div>
+
     </section>
 
-
+    <div class="commonBtn">
+        <a href="inputValueDisplay.html">Next page</a>
+    </div>
 
     <script>
 
@@ -72,12 +92,12 @@
 
         let isON = false;
 
-        toggleBtn.addEventListener("click", function(){
+        toggleBtn.addEventListener("click", function () {
             isON = !isON;
-            if(isON){
+            if (isON) {
                 toggleText.textContent = "Hello! I am js and Dom";
             }
-            else{
+            else {
                 toggleText.textContent = originalText;
             }
         })
@@ -85,25 +105,25 @@
         // Random text generate----------------------------------------------------------------------
 
         let textOptions = [
-        "Hello! I am JS and DOM",
-        "Welcome to JavaScript!",
-        "Random text appeared!",
-        "You're doing great!",
-        "Coding is fun!",
-        "Keep clicking!",
-        "Learning is power!"
-    ];
+            "Hello! I am JS and DOM",
+            "Welcome to JavaScript!",
+            "Random text appeared!",
+            "You're doing great!",
+            "Coding is fun!",
+            "Keep clicking!",
+            "Learning is power!"
+        ];
 
-    let randomBtn = document.getElementById("randomBtn");
-    let randomText = document.getElementById("randomText");
-     randomText.textContent = textOptions[0];
+        let randomBtn = document.getElementById("randomBtn");
+        let randomText = document.getElementById("randomText");
+        randomText.textContent = textOptions[0];
 
 
-    randomBtn.addEventListener("click", function(){
-        let randomIndex = Math.floor(Math.random() * textOptions.length);
+        randomBtn.addEventListener("click", function () {
+            let randomIndex = Math.floor(Math.random() * textOptions.length);
 
-        randomText.textContent = textOptions[randomIndex];
-    })
+            randomText.textContent = textOptions[randomIndex];
+        })
 
 
 
