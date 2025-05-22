@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            box-sizing: border-box;
+            font-family: "Work Sans", sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 7px 12px 30px rgba(0, 0, 0, .2);
+            padding: 30px;
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+
+        }
+
+        .container h1 {
+            font-size: 40px;
+            letter-spacing: 1px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .commonPrv{
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #cdcfd1;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+         .commonPrv a{
+            text-decoration: none;
+            color:black;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <h1>🎨Clik to Change Background Color</h1>
+        <button onclick="changeColor()">Change Color</button>
+        <p>Current Color:<span id="current"> #fffff </span></p>
+    </section>
+
+    <div class="commonPrv">
+        <a href="clickBtnChangeText.html">Previous</a>
+    </div>
+    <div class="commonPrv">
+        <a href="inputValueDisplay.html">Previous</a>
+    </div>
+
+    <script>
+        function changeColor() {
+            let currentColor = document.getElementById("current");
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)
+            console.log(randomColor)
+            document.body.style.backgroundColor = `${randomColor}`;
+            currentColor.innerText = randomColor;
+        }
+    </script>
+</body>
+
+</html>
