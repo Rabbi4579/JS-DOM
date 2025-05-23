@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background: #f0f2f5;
+        }
+
+        .counter_card {
+            background-color: #ffffff;
+            padding: 50px 70px;
+            border-radius: 30px;
+           box-shadow: 10px 10px 30px rgba(0, 0, 0, .1),
+           -10px -10px 30px rgba(255, 255, 255, .7);
+            text-align: center;
+        }
+
+        .counter_card p {
+            font-size: 40px;
+            color: #4c4c4d;
+
+        }
+
+        .value_display {
+            font-size: 72px;
+            font-weight: 600;
+            color: #333;
+            margin: 30px 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button_grp {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .btn {
+            width: 80px;
+            height: 80px;
+            background-color: yellow;
+            border-radius: 50%;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            box-shadow: 0 6px 12px rgba(0, 114, 255, 0.3);
+            border: none;
+            font-size: 30px;
+            font-weight: bold;
+            box-shadow: 0 6px 12px rgba(0, 114, 255, 0.3);
+            cursor: pointer;
+            color: white;
+            transition: transform .2s, box-shadow;
+        }
+        .btn:hover{
+            transform: scale(1.2);
+            box-shadow: 0px 8px 16px rgb(0, 114, 255, .4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counter_card">
+        <p>Counter</p>
+        <div class="value_display" id="value">0</div>
+        <div class="button_grp">
+            <button onclick="decrement()" class="btn">—</button>
+            <button onclick="increament()" class="btn">+</button>
+            <button onclick="reset()" class="btn">Reset</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        let count = 0;
+        function increament(){
+            count++;
+            document.querySelector("#value").innerText = count;
+        }
+
+        function decrement (){
+            if(count > 0){
+                count --;
+                document.querySelector("#value").innerText = count;
+            }else{
+                alert("Negetive value not allowed");
+            }
+
+        }
+        function reset(){
+            count = 0;
+            document.querySelector("#value").innerText = count;
+        }
+    </script>
+
+</body>
+
+</html>
